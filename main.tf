@@ -30,7 +30,7 @@ resource "random_string" "random_suffix" {
 }
 
 resource "docker_container" "nginx" {
-  name    = "nginx-${random_string.random_suffix}"
+  name    = "nginx-${random_string.random_suffix.result}"
   image   = docker_image.nginx.image_id
 
   ports {
